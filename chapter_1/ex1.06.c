@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-main(){
+int main(void){
 
   int c;
-  while(c=(getchar()!=EOF)) printf("Input was %d \n",c);
+  while((c=getchar())!=EOF);
   printf("Final input was %d \n",c);
 }
