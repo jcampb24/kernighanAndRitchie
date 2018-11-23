@@ -1,8 +1,10 @@
 #include <stdio.h>
 
-main(){
+int main(void){
 
   int c;
-  while(c=(getchar()!=EOF)) printf("Input was %d \n",c);
-  printf("Final input was %d \n",c);
+  while(c=(getchar()!=EOF)){
+    printf("Test value = %d.\n",c);
+  } 
+  printf("Final test value = %d. \n",c);
 }
