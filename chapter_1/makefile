@@ -76,7 +76,7 @@ ex1.05.log: ex1.05.c
 ex1.06.log: ex1.06.c
 	@echo "Completing Exercise 6."
 	-$(CC) -ansi ex1.06.c -o ex1.06.out
-	-./ex1.06.out < thePrince.txt > ex1.06.log
+	-echo "Test message." | ./ex1.06.out > ex1.06.log
 
 clean:
 	-rm *.out *.log
