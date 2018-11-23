@@ -1,6 +1,6 @@
 .phony: all, clean
 
-all: ex1.01.log ex1.02.log
+all: ex1.01.log ex1.02.log ex1.03.log
 
 ex1.01.log: ex1.01.c
 	@echo "Completing Exercise 1."
@@ -51,13 +51,17 @@ ex1.02.log: ex1.01.c
 	-./ex1.02.out >> ex1.02.log
 	@echo "\n" >> ex1.02.log
 
-
 	#Replace newline sequence in printf with \z.
 	cat ex1.01.c | sed s/n\"/z\"/ > ex1.02.c
 	-$(CC) -ansi -w ex1.02.c -o ex1.02.out
 	@echo "n -> z result" >> ex1.02.log
 	-./ex1.02.out >> ex1.02.log
 	@echo "\n" >> ex1.02.log
+
+ex1.03.log: ex1.03.c
+	@echo "Completing Exercise 3."
+	-$(CC) -ansi ex1.03.c -o ex1.03.out
+	-./ex1.03.out >> ex1.03.log
 
 clean:
 	-rm *.out *.log
