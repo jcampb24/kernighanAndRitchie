@@ -40,12 +40,4 @@ int main(void){
   numwords=0;
   for(i=0;i<MAXLENGTH;i++) numwords+=histogram[i];
 
-  printf("Word Length\t\tHistogram\n");
-  //Create the histogram display, in percentage points.
-  for(i=0;i<MAXLENGTH;i++){
-    c=100*histogram[i]/numwords;
-    printf("%2d\t\t\t%2d%%\t\t",i+1,c);
-    for(j=0;j<c;j++) printf("*");
-    printf("\n");
-    }
 }
