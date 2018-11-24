@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main(){
+int main(void){
 
   int c;
   while((c=getchar())!=EOF){
@@ -11,9 +11,9 @@ main(){
     } else if (c=='\t'){
       putchar('\\');
       putchar('t');
-    } else if (c=='\n'){
+    } else if (c=='\\'){
       putchar('\\');
-      putchar('n');
+      putchar('\\');
     } else putchar(c);
 
   }
