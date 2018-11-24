@@ -29,7 +29,7 @@ int main(void){
     } else {
       //Switch the state if necessary
       if(state==OUT){
-	state==IN;
+	state=IN;
       }
       //Increment the word length counter.
       i++;
