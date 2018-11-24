@@ -6,7 +6,7 @@
 int main(void){
 
   long histogram[MAXLENGTH];
-  int i,c,state,j;
+  int i,c,state,j,maxheight;
   long numwords;
   
   // Initialize histogram with all zeros.
@@ -39,5 +39,36 @@ int main(void){
   //Calculate the total number of input words.
   numwords=0;
   for(i=0;i<MAXLENGTH;i++) numwords+=histogram[i];
+
+  //Scale the histogram by the total number of words.
+  for(i=0;i<MAXLENGTH;i++) histogram[i]=100*histogram[i]/numwords;
+
+  //Calculate the maximum height of the histogram.
+  maxheight=0;
+  for(i=0;i<MAXLENGTH;i++) if(histogram[i]>maxheight) maxheight=histogram[i];
+  
+  //The histogram will consist of three columns for each length.
+  //There will be one row for each possible count up to maxheight, a horizontal axis, and labels for the counts.
+  
+  //To create the histogram, first cycle down from the top
+  for(i=maxheight;i>0;i--){
+    //and then cycle across each row
+    for(j=1;j<MAXLENGTH;j++){
+      //If the histogram for length j is less than i, then print three spaces. Otherwise, print three stars.
+      if(histogram[j-1]<i){
+	printf("   ");
+      } else {
+	printf("***");
+      }
+    }
+    //Close this row
+    printf("\n");
+  }
+  //Print the horizontal axis.
+  for(j=1;j<=3*MAXLENGTH;j++) printf("-");
+  printf("\n");
+  //Finally, label the bars.
+  for(j=1;j<=MAXLENGTH;j++) printf("%2d ",j);
+  printf("\b+\n");
 
 }
