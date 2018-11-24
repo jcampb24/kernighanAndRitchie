@@ -1,6 +1,6 @@
 .phony: all, clean
 
-all: ex1.01.log ex1.02.log ex1.03.log ex1.04.log ex1.05.log ex1.06.log ex1.07.log ex1.08.log ex1.09.log ex1.10.log ex1.12.log
+all: ex1.01.log ex1.02.log ex1.03.log ex1.04.log ex1.05.log ex1.06.log ex1.07.log ex1.08.log ex1.09.log ex1.10.log ex1.12.log ex1.13.log 
 
 ex1.01.log: ex1.01.c
 	@echo "Completing Exercise 1."
@@ -102,6 +102,11 @@ ex1.12.log: ex1.12.c ex1.12.input.txt
 	@echo "Completing Exercise 12."
 	-$(CC) -ansi ex1.12.c -o ex1.12.out
 	-./ex1.12.out < ex1.12.input.txt > ex1.12.log
+
+ex1.13.log: ex1.13.c thePrince.txt
+	@echo "Completing Exercise 13."
+	-$(CC) -ansi ex1.13.c -o ex1.13.out
+	-./ex1.13.out < thePrince.txt > ex1.13.log
 
 clean:
 	-rm *.out *.log

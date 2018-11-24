@@ -6,7 +6,8 @@
 int main(void){
 
   int histogram[MAXLENGTH];
-  int i,c,state,numwords,j;
+  int i,c,state,j;
+  long numwords;
   
   // Initialize histogram with all zeros.
   for(i=0;i<MAXLENGTH;i++) histogram[i]=0;
@@ -46,6 +47,5 @@ int main(void){
     printf("%2d\t\t\t%2d%%\t\t",i+1,c);
     for(j=0;j<c;j++) printf("*");
     printf("\n");
-  }
-
+    }
 }
