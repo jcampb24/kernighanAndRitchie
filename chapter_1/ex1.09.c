@@ -2,7 +2,7 @@
 #define OUT 0
 #define IN  1
 
-main(){
+int main(void){
 
   int c, state;
   state=OUT;
