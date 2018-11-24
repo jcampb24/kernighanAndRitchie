@@ -115,6 +115,6 @@ ex1.13.vertical.log: ex1.13.vertical.c thePrince.txt
 
 clean:
 	-rm *.out *.log
-
+	-rm ex1.02.c
 
 
