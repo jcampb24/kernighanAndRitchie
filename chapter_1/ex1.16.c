@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MAXLINE 1000
+#define MAXLINE 10
 
 int getLine(char line[], int maxline);
 void copy(char to[], char from[]);
@@ -26,19 +26,20 @@ int main(void){
 
 }
 
-/* getLine: read a line into s, return length */
+/* getLine: Read a line into s until it is out of space. Return length */
 int getLine(char s[], int lim){
   
   int c, i;
   
-  for(i=0;i<lim-1 && (c=getchar())!=EOF && c!='\n'; i++) s[i]=c;
-  if(c=='\n'){
+  //Read the line until we have hit the end of the file, the end of the line, or the end of the storage.
+  for(i=0;i<lim-1 && (c=getchar())!=EOF && c!='\n'; i++) s[i]=c; 
+  if(c=='\n'){ //If the line ended with a newline, then store that and the null character to terminate the array.
     s[i]=c;
     i++;
     s[i]='\0';
-  } else if (c==EOF){
+  } else if (c==EOF){ //If the line ended with the end-of-file character, terminate the array.
     s[i]='\0';
-  } else {
+  } else { //If the line ended because we ran out of storage, keep counting characters.
     while((c=getchar())!=EOF && c!='\n') i++;
   }
   return i;
