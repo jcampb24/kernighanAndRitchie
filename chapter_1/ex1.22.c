@@ -14,6 +14,7 @@ int main(void){
       charcount=0;
     } else{
       putchar(c);
+      if(c=='\n') charcount=0;
     }
 
   }
