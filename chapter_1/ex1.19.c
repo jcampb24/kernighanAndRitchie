@@ -7,23 +7,28 @@ int main(void){
 
   int c;
   int thisline[MAXLENGTH];
-  int thislength;
+  int thislength=0;
   int i;
 
   //Initialize thisline.
   for(i=0;i<MAXLENGTH;i++) thisline[i]='\0';
 
   while((c=getchar())!=EOF){
-
-    thisline[thislength]=c;
-    
+    printf("%d ",c);
     if(thislength<MAXLENGTH){
-      thislength++;
+      thisline[thislength]=c;
+    } else {
+      printf("Error: Maximum line length of %d characters exceeded.\n",MAXLENGTH);
+      return(-1);
     }
+
+    thislength++;
+
     if(c=='\n'){
       reverse(thisline,thislength);
       for(i=0;i<thislength;i++){ 
 	putchar(thisline[i]);
+	//printf("%d",thisline[i]);
 	thisline[i]='\0';
       }
       thislength=0;
