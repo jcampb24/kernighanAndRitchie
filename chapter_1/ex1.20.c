@@ -11,7 +11,7 @@ int main(void){
   while((c=getchar())!=EOF){
 
     if(c=='\t'){
-      for(i=1;i<charsleft;i++) putchar(' ');
+      for(i=1;i<=charsleft;i++) putchar(' ');
       charsleft=SPACES_PER_TAB;
     } else {
       putchar(c);
