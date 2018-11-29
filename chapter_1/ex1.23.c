@@ -65,7 +65,9 @@ int main(void){
       if(endquote(lasttwochars)==inquote) inquote=OUT;
     }
   }
-  
+
+  if(lasttwochars[1]>=0) putchar(lasttwochars[1]);
+
   return(0);
 }
 
