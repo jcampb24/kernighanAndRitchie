@@ -14,7 +14,7 @@ int main(void){
   for(i=0;i<MAXLENGTH;i++) thisline[i]='\0';
 
   while((c=getchar())!=EOF){
-    printf("%d ",c);
+
     if(thislength<MAXLENGTH){
       thisline[thislength]=c;
     } else {

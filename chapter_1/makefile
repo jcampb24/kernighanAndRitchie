@@ -1,6 +1,6 @@
 .phony: all, clean
 
-all: ex1.01.log ex1.02.log ex1.03.log ex1.04.log ex1.05.log ex1.06.log ex1.07.log ex1.08.log ex1.09.log ex1.10.log ex1.12.log ex1.13.log ex1.13.vertical.log ex1.14.log ex1.15.log ex1.16.log ex1.17.log ex1.18.log
+all: ex1.01.log ex1.02.log ex1.03.log ex1.04.log ex1.05.log ex1.06.log ex1.07.log ex1.08.log ex1.09.log ex1.10.log ex1.12.log ex1.13.log ex1.13.vertical.log ex1.14.log ex1.15.log ex1.16.log ex1.17.log ex1.18.log ex1.19.log ex1.20.log
 
 ex1.01.log: ex1.01.c
 	@echo "Completing Exercise 1."
@@ -138,6 +138,16 @@ ex1.18.log: ex1.18.c thePrince.txt
 	-$(CC) -ansi ex1.18.c -o ex1.18.out
 	head thePrince.txt | ./ex1.18.out > ex1.18.log
 
+#thePrince.txt starts with three seemingly invisible characters which get represented as question marks when printed in reverse. (I have checked that they are really there.) To avoid this unsightly outcome, we use the second ten lines of the text.
+ex1.19.log: ex1.19.c thePrince.txt
+	@echo "Completing Exercise 19."
+	-$(CC) -ansi ex1.19.c -o ex1.19.out
+	head -n 20 thePrince.txt | tail | ./ex1.19.out > ex1.19.log
+
+ex1.20.log: ex1.20.c ex1.10.input.txt
+	@echo "Completing Exercise 20."
+	-$(CC) -ansi ex1.20.c -o ex1.20.out
+	cat ex1.10.input.txt | ./ex1.20.out > ex1.20.log
 clean:
 	-rm *.out *.log
 	-rm ex1.02.c
