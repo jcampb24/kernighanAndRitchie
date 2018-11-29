@@ -1,6 +1,6 @@
 .phony: all, clean
 
-all: ex1.01.log ex1.02.log ex1.03.log ex1.04.log ex1.05.log ex1.06.log ex1.07.log ex1.08.log ex1.09.log ex1.10.log ex1.12.log ex1.13.log ex1.13.vertical.log ex1.14.log ex1.15.log ex1.16.log ex1.17.log ex1.18.log ex1.19.log ex1.20.log ex1.21.log ex1.22.log ex1.23.stripped.c
+all: ex1.01.log ex1.02.log ex1.03.log ex1.04.log ex1.05.log ex1.06.log ex1.07.log ex1.08.log ex1.09.log ex1.10.log ex1.12.log ex1.13.log ex1.13.vertical.log ex1.14.log ex1.15.log ex1.16.log ex1.17.log ex1.18.log ex1.19.log ex1.20.log ex1.21.log ex1.22.log ex1.23.stripped.c ex1.24.log
 
 ex1.01.log: ex1.01.c
 	@echo "Completing Exercise 1."
@@ -164,6 +164,12 @@ ex1.23.stripped.c: ex1.23.c
 	@echo "Completing Exercise 23."
 	-$(CC) -ansi ex1.23.c -o ex1.23.out
 	./ex1.23.out < ex1.23.c > ex1.23.stripped.c
+
+#By design, this test should produce an error.
+ex1.24.log: ex1.24.c ex1.24.test.c
+	@echo "Completing Exercise 24."
+	-$(CC) -ansi ex1.24.c -o ex1.24.out
+	./ex1.24.out < ex1.24.test.c > ex1.24.log
 
 clean:
 	-rm *.out *.log
