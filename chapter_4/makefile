@@ -1,6 +1,6 @@
 .phony: all clean
 
-all: ex4.01.log ex4.02.log ex4.03.log ex4.04.log
+all: ex4.01.log ex4.02.log ex4.03.log ex4.04.log ex4.05.log
 
 ex4.01.log: ex4.01.c ex4.01.getline2.c ex4.01.strrindex.c ex4.01.input
 	@echo "Completing Exercise 4.1."
@@ -32,7 +32,18 @@ ex4.04.log: ex4.04.c ex4.04.stack.c ex4.03.ch.c ex4.03.getop.c
 	echo "98 57 $ ?" | ./ex4.04.out >> ex4.04.log
 	echo "98 54 $ ? < ?" | ./ex4.04.out >> ex4.04.log
 
-clean:
+ex4.05.log: ex4.05.c ex4.04.stack.c ex4.03.ch.c ex4.03.getop.c
+	@echo "Completing Exercise 4.5."
+	-$(CC) -ansi ex4.05.c ex4.04.stack.c ex4.03.ch.c ex4.03.getop.c -o ex4.05.out
+	echo "3.1415 4 / S ?" | ./ex4.05.out > ex4.05.log
+	echo "3.1415 4 / C ?" | ./ex4.05.out >> ex4.05.log
+	echo "3.1415 4 / T ?" | ./ex4.05.out >> ex4.05.log
+	echo "1 E ?" | ./ex4.05.out >> ex4.05.log
+	echo "1 L ?" | ./ex4.05.out >> ex4.05.log
+	echo "2 R ?" | ./ex4.05.out >> ex4.05.log
+	echo "2 0.5 P ?" | ./ex4.05.out >> ex4.05.log
+
+.clean:
 	-rm *.log
 	-rm *.out
 	-rm *.o
