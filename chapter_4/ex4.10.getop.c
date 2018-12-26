@@ -49,8 +49,8 @@ int getline2(char s[], int lim){
   while(--lim>1 && (c=getchar())!=EOF && c!='\n')
     s[i++]=c;
   if(c==EOF) lastLine=1;
-  s[i++]='\n';
-  s[i]='\0';
+  s[i++]=c;
+  s[i+1]='\0';
   return(i);
 
 }

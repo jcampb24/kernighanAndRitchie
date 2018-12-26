@@ -71,7 +71,7 @@ ex4.10.log: ex4.03.c ex4.03.stack.c ex4.10.getop.c
 	@echo "Completing Exercise 4.3."
 	-$(CC) -ansi ex4.03.c ex4.03.stack.c ex4.10.getop.c -o ex4.10.out
 	echo "15 6 %" | ./ex4.10.out > ex4.10.log
-	echo -n "46.7 -.3 +" | ./ex4.10.out >> ex4.10.log
+	echo "46.7 -.3 +" | ./ex4.10.out >> ex4.10.log
 
 clean:
 	-rm *.log
