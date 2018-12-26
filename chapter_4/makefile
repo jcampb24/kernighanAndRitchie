@@ -1,6 +1,6 @@
 .phony: all clean
 
-all: ex4.01.log ex4.02.log ex4.03.log ex4.04.log ex4.05.log ex4.06.log ex4.07.log ex4.08.log ex4.09.log
+all: ex4.01.log ex4.02.log ex4.03.log ex4.04.log ex4.05.log ex4.06.log ex4.07.log ex4.08.log ex4.09.log ex4.10.log
 
 ex4.01.log: ex4.01.c ex4.01.getline2.c ex4.01.strrindex.c ex4.01.input
 	@echo "Completing Exercise 4.1."
@@ -66,6 +66,12 @@ ex4.09.log: ex4.03.c ex4.03.stack.c ex4.09.ch.c ex4.09.getop.c
 	-$(CC) -ansi ex4.03.c ex4.03.stack.c ex4.09.ch.c ex4.09.getop.c -o ex4.09.out
 	echo "15 6 %" | ./ex4.09.out > ex4.09.log
 	echo "46.7 -.3 +" | ./ex4.09.out >> ex4.09.log
+
+ex4.10.log: ex4.03.c ex4.03.stack.c ex4.10.getop.c
+	@echo "Completing Exercise 4.3."
+	-$(CC) -ansi ex4.03.c ex4.03.stack.c ex4.10.getop.c -o ex4.10.out
+	echo "15 6 %" | ./ex4.10.out > ex4.10.log
+	echo -n "46.7 -.3 +" | ./ex4.10.out >> ex4.10.log
 
 clean:
 	-rm *.log
