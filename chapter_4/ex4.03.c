@@ -49,6 +49,7 @@ int main(void){
       op2=pop();
       push((int)pop() % (int) op2);
       break;
+
     case'\n': //Pop the stack's top element and display it.
       printf("\t%.8g\n",pop());
       break;
