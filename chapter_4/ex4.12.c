@@ -36,12 +36,13 @@ int main(void){
 //This version of itoa has a bug when handling the largest negative integer.
 void itoa(int n, char s[]){
 
-  int i, sign;
+  int i;
   static int depth=0; //Keeps track of recursion depth.
   static int pos=0; //Keeps track of the position in the string.
 
-  if((sign=n)<0) {
+  if(n<0) {
     n = -n;
+    s[pos++]='-';
   } 
 
   if(n/10){
