@@ -1,6 +1,6 @@
 .phony: all clean
 
-all: ex4.01.log ex4.02.log ex4.03.log ex4.04.log ex4.05.log ex4.06.log ex4.07.log ex4.08.log ex4.09.log ex4.10.log ex4.11.log ex4.12.log ex4.13.log
+all: ex4.01.log ex4.02.log ex4.03.log ex4.04.log ex4.05.log ex4.06.log ex4.07.log ex4.08.log ex4.09.log ex4.10.log ex4.11.log ex4.12.log ex4.13.log ex4.14.log
 
 ex4.01.log: ex4.01.c ex4.01.getline2.c ex4.01.strrindex.c ex4.01.input
 	@echo "Completing Exercise 4.1."
@@ -88,6 +88,11 @@ ex4.13.log: ex4.13.c
 	@echo "Completing Exercise 4.13."
 	-$(CC) -ansi ex4.13.c -o ex4.13.out
 	./ex4.13.out > ex4.13.log
+
+ex4.14.log: ex4.14.c
+	@echo "Completing Exercise 4.14."
+	-$(CC) -ansi ex4.14.c -o ex4.14.out
+	./ex4.14.out > ex4.14.log
 
 clean:
 	-rm *.log
